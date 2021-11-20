@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ledger: one
+  account: one
+  subcategory: one
+  date: 2021-11-20
+  info: MyString
+  cleared: false
+  input: 9.99
+
+two:
+  ledger: two
+  account: two
+  subcategory: two
+  date: 2021-11-20
+  info: MyString
+  cleared: false
+  input: 9.99
