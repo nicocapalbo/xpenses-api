@@ -1,16 +1,17 @@
 class DashboardController < ApplicationController
-  # before_action :set_ledger, only: [:index, :create]
+  before_action :set_ledger, only: [:index, :create]
 
-  # def index
-  #   @accounts = Account.where(ledger: @ledger)
-  #   @categories = categories_total
-  #   @month_total_expense = month_total_expense
-  #   @top_transactions = top_transactions
-  #   @data_keys = chart_data_keys
-  #   @data_values = chart_data_values
-  # end
+  def index
+    @accounts = Account.where(ledger: @ledger)
+    # @categories = categories_total
+    # @month_total_expense = month_total_expense
+    # @top_transactions = top_transactions
+    # @data_keys = chart_data_keys
+    # @data_values = chart_data_values
+    render json: { account: @accounts, attr: '' }
+  end
 
-  # private
+  private
 
   # def month_total_expense
   #   Category.month_total_expense
@@ -43,7 +44,7 @@ class DashboardController < ApplicationController
   #   data_values
   # end
 
-  # def set_ledger
-  #   @ledger = Ledger.find_by(id: params[:ledger_id])
-  # end
+  def set_ledger
+    @ledger = Ledger.find_by(id: params[:ledger_id])
+  end
 end
