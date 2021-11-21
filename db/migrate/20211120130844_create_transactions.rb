@@ -7,7 +7,8 @@ class CreateTransactions < ActiveRecord::Migration[6.0]
       t.date :date
       t.string :info
       t.boolean :cleared
-      t.decimal :input
+      t.boolean :ttype
+      t.decimal :value
 
       t.timestamps
     end

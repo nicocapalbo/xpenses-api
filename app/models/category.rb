@@ -1,17 +1,13 @@
 class Category < ApplicationRecord
-  include Abyme::Model
-
   belongs_to :ledger
   has_many :subcategories
-  abymize :subcategories, permit: [:name]
   has_many :transactions, through: :subcategories
-  
   validates :ledger, :name, presence: true
   validates :name, length: { in: 4..20 }
 
   def category_total
-    category_expense = Subcategory.where(category: self).left_outer_joins(:transactions).where(transactions: { cleared: true }).where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).sum(:payment)
-    category_income = Subcategory.where(category: self).left_outer_joins(:transactions).where(transactions: { cleared: true }).where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).sum(:deposit)
+    category_expense = Subcategory.where(category: self).left_outer_joins(:transactions).where(transactions: { cleared: true, ttype: true }).where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).sum(:value)
+    category_income = Subcategory.where(category: self).left_outer_joins(:transactions).where(transactions: { cleared: true, ttype: false }).where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).sum(:value)
     ((category_income - category_expense) *  -1 )
   end
 
@@ -20,6 +16,6 @@ class Category < ApplicationRecord
   # end
 
   def self.month_total_expense
-    Category.joins(subcategories: :transactions).where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).sum(:payment)
+    Category.joins(subcategories: :transactions).where(transactions: { ttype: true }).where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).sum(:value)
   end
 end

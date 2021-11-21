@@ -4,22 +4,14 @@ class LedgersController < ApplicationController
     render json: @ledgers
   end
 
-  # def new
-  #   @ledger = Ledger.new
-  # end
+  def create
+    @ledger = Ledger.new(ledger_params)
+    return unless @ledger.save!
+  end
 
-  # def create
-  #   @ledger = current_user.ledgers.new(ledger_params)
-  #   if @ledger.save!
-  #     redirect_to ledger_path(@ledger)
-  #   else
-  #     render :new
-  #   end
-  # end
+  private
 
-  # private
-
-  # def ledger_params
-  #   params.require(:ledger).permit(:name, :description)
-  # end
+  def ledger_params
+    params.require(:ledger).permit(:name, :description)
+  end
 end
