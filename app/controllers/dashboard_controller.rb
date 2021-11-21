@@ -3,34 +3,39 @@ class DashboardController < ApplicationController
 
   def index
     @accounts = Account.where(ledger: @ledger)
-    # @categories = categories_total
-    # @month_total_expense = month_total_expense
-    # @top_transactions = top_transactions
+    @categories = categories_total
+    @month_total_expense = month_total_expense
+    @top_transactions = top_transactions
     # @data_keys = chart_data_keys
     # @data_values = chart_data_values
-    render json: { account: @accounts, attr: '' }
+    render json: {
+      accounts: @accounts,
+      categories: @categories,
+      month_total_expense: @month_total_expense,
+      top_transactions: @top_transactions
+    }
   end
 
   private
 
-  # def month_total_expense
-  #   Category.month_total_expense
-  # end
+  def month_total_expense
+    Category.month_total_expense
+  end
 
-  # def top_transactions
-  #   Transaction.month_top_transactions
-  # end
+  def top_transactions
+    Transaction.month_top_transactions
+  end
 
-  # def categories_total
-  #   categories = []
-  #   Category.all.each do |category|
-  #     categories << {
-  #       category_name: category.name,
-  #       category_total: category.category_total
-  #     }
-  #   end
-  #   categories
-  # end
+  def categories_total
+    categories = []
+    Category.all.each do |category|
+      categories << {
+        category_name: category.name,
+        category_total: category.category_total
+      }
+    end
+    categories
+  end
 
   # def chart_data_keys
   #   data_keys = []
