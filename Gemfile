@@ -20,7 +20,7 @@ gem 'puma', '~> 4.1'
 # gem 'image_processing', '~> 1.2'
 
 gem 'rubocop'
-gem 'abyme'
+# gem 'abyme'
 # gem 'solargraph'
 
 # Reduces boot times through caching; required in config/boot.rb
