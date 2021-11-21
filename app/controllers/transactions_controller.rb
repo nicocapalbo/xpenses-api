@@ -8,7 +8,6 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new(transaction_params)
-    # @ledger = params[:transaction][:ledger_id].to_i
     return unless @transaction.save
   end
 
