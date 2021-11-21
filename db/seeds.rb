@@ -40,9 +40,9 @@ p '#7 - Creating new transactions.....'
 #   Transaction.create!(ledger: Ledger.first, account: Account.first, date: Date.today, info: 'some info', subcategory: Subcategory.find(rand(1..4)), ttype: rand(0...1), value: rand(-20..20), cleared: true)
 # }
 Transaction.create!(ledger: Ledger.first, account: Account.first, date: Date.today, info: 'some info', subcategory: Subcategory.first, ttype: true, value: 60, cleared: true)
-Transaction.create!(ledger: Ledger.first, account: Account.first, date: Date.today, info: 'some info', subcategory: Subcategory.second, ttype: true, value: 3, cleared: true)
-Transaction.create!(ledger: Ledger.first, account: Account.first, date: Date.yesterday, info: 'some info', subcategory: Subcategory.second, ttype: true, value: 5, cleared: true)
-Transaction.create!(ledger: Ledger.first, account: Account.first, date: Date.tomorrow, info: 'some info', subcategory: Subcategory.second, ttype: true, value: 2, cleared: true)
+Transaction.create!(ledger: Ledger.first, account: Account.first, date: Date.today, info: 'some info', subcategory: Subcategory.second, ttype: true, value: 3, cleared: false)
+Transaction.create!(ledger: Ledger.first, account: Account.first, date: Date.yesterday, info: 'some info', subcategory: Subcategory.second, ttype: true, value: 5, cleared: false)
+Transaction.create!(ledger: Ledger.first, account: Account.first, date: Date.tomorrow, info: 'some info', subcategory: Subcategory.second, ttype: true, value: 2, cleared: false)
 Transaction.create!(ledger: Ledger.first, account: Account.first, date: Date.tomorrow, info: 'some info', subcategory: Subcategory.fifth, ttype: false, value: 2500, cleared: true)
 
 p 'Everything done!'
