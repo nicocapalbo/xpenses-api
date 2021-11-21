@@ -53,7 +53,8 @@ ActiveRecord::Schema.define(version: 2021_11_20_130844) do
     t.date "date"
     t.string "info"
     t.boolean "cleared"
-    t.decimal "input"
+    t.boolean "ttype"
+    t.decimal "value"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["account_id"], name: "index_transactions_on_account_id"
