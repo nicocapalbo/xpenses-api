@@ -9,18 +9,14 @@ class AccountsController < ApplicationController
       diff: diff(total_balance, total_cleared),
       diff_percentage: diff_percentage(total_balance, total_cleared)
     }
-    render json: {accounts: @accounts, totals: @total_info}
+    render json: { accounts: @accounts, totals: @total_info }
   end
 
-  # def create
-  #   @account = Account.new(account_params)
-  #   @account.ledger = @ledger
-  #   if @account.save
-  #     redirect_to ledger_path(@ledger)
-  #   else
-  #     render :index
-  #   end
-  # end
+  def create
+    @account = Account.new(account_params)
+    @account.ledger = @ledger
+    return unless @account.save
+  end
 
   private
 
