@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_20_130844) do
+ActiveRecord::Schema.define(version: 2021_12_04_191916) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +46,24 @@ ActiveRecord::Schema.define(version: 2021_11_20_130844) do
     t.index ["category_id"], name: "index_subcategories_on_category_id"
   end
 
+  create_table "subscriptions", force: :cascade do |t|
+    t.bigint "ledger_id", null: false
+    t.bigint "account_id", null: false
+    t.bigint "subcategory_id", null: false
+    t.date "date"
+    t.string "info"
+    t.boolean "cleared"
+    t.boolean "ttype"
+    t.decimal "value"
+    t.integer "installments"
+    t.boolean "subscription"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["account_id"], name: "index_subscriptions_on_account_id"
+    t.index ["ledger_id"], name: "index_subscriptions_on_ledger_id"
+    t.index ["subcategory_id"], name: "index_subscriptions_on_subcategory_id"
+  end
+
   create_table "transactions", force: :cascade do |t|
     t.bigint "ledger_id", null: false
     t.bigint "account_id", null: false
@@ -65,6 +83,9 @@ ActiveRecord::Schema.define(version: 2021_11_20_130844) do
   add_foreign_key "accounts", "ledgers"
   add_foreign_key "categories", "ledgers"
   add_foreign_key "subcategories", "categories"
+  add_foreign_key "subscriptions", "accounts"
+  add_foreign_key "subscriptions", "ledgers"
+  add_foreign_key "subscriptions", "subcategories"
   add_foreign_key "transactions", "accounts"
   add_foreign_key "transactions", "ledgers"
   add_foreign_key "transactions", "subcategories"
