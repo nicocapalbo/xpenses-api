@@ -10,7 +10,7 @@ module Secured
 
   SCOPES = {
     '/ledgers' => nil
-  }
+  }.freeze
 
   private
 
