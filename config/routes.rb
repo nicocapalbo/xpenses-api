@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :transactions
     resources :categories
   end
-  resources :accounts
-  resources :transactions
-  resources :dashboards
+  # resources :accounts
+  # resources :transactions
+  # resources :dashboards
 end

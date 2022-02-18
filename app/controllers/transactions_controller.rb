@@ -22,6 +22,7 @@ class TransactionsController < ApplicationController
 
   def set_ledger
     @ledger = Ledger.find_by(id: params[:ledger_id])
+    render_fail('Ledger not found / Ledger must exist', :bad_request) unless @ledger
   end
 
   def transaction_params

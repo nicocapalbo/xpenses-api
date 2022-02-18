@@ -38,57 +38,54 @@ RSpec.describe Ledger, type: :model do
     context do
         let(:ledger) { create(:ledger) }
         let!(:transaction) { create(:transaction, ledger: ledger, cleared: true, ttype: false) }
-        describe '#ledger_cleared_deposit' do
-            it 'should return the correct value' do
-                expect(ledger.ledger_cleared_deposit).to eq(transaction.value)
+        context 'with ttype false' do
+            describe '#ledger_cleared_deposit' do
+                it 'should return the correct value' do
+                    expect(ledger.ledger_cleared_deposit).to eq(transaction.value)
+                end
             end
-        end
-        describe '#ledger_cleared_payment' do
-            before do
-                transaction.update!(ttype: true)
+            describe '#ledger_balanced_deposit' do
+                it 'should return the correct value' do
+                    expect(ledger.ledger_balanced_deposit).to eq(transaction.value)
+                end
             end
 
-            it 'should return the correct value' do
-                expect(ledger.ledger_cleared_payment).to eq(transaction.value)
+            describe '#ledger_balanced_month_deposit' do
+                it 'should return the correct value' do
+                    expect(ledger.ledger_balanced_month_deposit).to eq(transaction.value)
+                end
+            end
+
+            describe '#ledger_cleared_month_deposit' do
+                it 'should return the correct value' do
+                    expect(ledger.ledger_cleared_month_deposit).to eq(transaction.value)
+                end
             end
         end
-        describe '#ledger_cleared_month_deposit' do
-            it 'should return the correct value' do
-                expect(ledger.ledger_cleared_month_deposit).to eq(transaction.value)
-            end
-        end
-        describe '#ledger_cleared_month_payment' do
+        context 'with ttype true' do
             before do
                 transaction.update!(ttype: true)
             end
-            it 'should return the correct value' do
-                expect(ledger.ledger_cleared_month_payment).to eq(transaction.value)
+            
+            describe '#ledger_cleared_payment' do
+                it 'should return the correct value' do
+                    expect(ledger.ledger_cleared_payment).to eq(transaction.value)
+                end
             end
-        end
-        describe '#ledger_balanced_deposit' do
-            it 'should return the correct value' do
-                expect(ledger.ledger_balanced_deposit).to eq(transaction.value)
+            describe '#ledger_cleared_month_payment' do
+                it 'should return the correct value' do
+                    expect(ledger.ledger_cleared_month_payment).to eq(transaction.value)
+                end
             end
-        end
-        describe '#ledger_balanced_payment' do
-            before do
-                transaction.update!(ttype: true)
+            describe '#ledger_balanced_payment' do
+                it 'should return the correct value' do
+                    expect(ledger.ledger_balanced_payment).to eq(transaction.value)
+                end
             end
-            it 'should return the correct value' do
-                expect(ledger.ledger_balanced_payment).to eq(transaction.value)
-            end
-        end
-        describe '#ledger_balanced_month_deposit' do
-            it 'should return the correct value' do
-                expect(ledger.ledger_balanced_month_deposit).to eq(transaction.value)
-            end
-        end
-        describe '#ledger_balanced_month_payment' do
-            before do
-                transaction.update!(ttype: true)
-            end
-            it 'should return the correct value' do
-                expect(ledger.ledger_balanced_month_payment).to eq(transaction.value)
+            describe '#ledger_balanced_month_payment' do
+                it 'should return the correct value' do
+                    expect(ledger.ledger_balanced_month_payment).to eq(transaction.value)
+                end
             end
         end
     end

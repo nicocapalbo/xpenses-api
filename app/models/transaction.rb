@@ -10,6 +10,7 @@ class Transaction < ApplicationRecord
   # validate :pay_or_deposit?
 
   def self.month_top_transactions
-    Transaction.where('date >= ? and date <= ?', Time.now.beginning_of_month, Time.now.end_of_month).where(ttype: true).order(value: :desc).first(5)
+    date = Date.today
+    Transaction.where('date >= ? and date <= ?', date.beginning_of_month,date.end_of_month).where(ttype: true).order(date: :desc).first(5)
   end
 end

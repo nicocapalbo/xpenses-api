@@ -1,6 +1,174 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/controllers/accounts_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          2,
+          null,
+          2,
+          null,
+          null,
+          null,
+          null,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          6,
+          6,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          6,
+          null,
+          null,
+          1,
+          6,
+          null,
+          null
+        ]
+      },
+      "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          1,
+          4,
+          4,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/controllers/categories_controller.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          3,
+          3,
+          null,
+          null,
+          1,
+          0,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/controllers/ledgers_controller.rb": {
+        "lines": [
+          1,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/controllers/transactions_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          2,
+          2,
+          null,
+          null,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          null,
+          0,
+          0,
+          null,
+          null,
+          1,
+          null,
+          1,
+          3,
+          3,
+          null,
+          null,
+          1,
+          0,
+          null,
+          0,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/models/account.rb": {
         "lines": [
           1,
@@ -66,7 +234,11 @@
           1,
           null,
           1,
+          7,
+          null,
+          null,
           1,
+          7,
           null,
           null,
           1,
@@ -78,15 +250,11 @@
           null,
           null,
           1,
-          1,
+          7,
           null,
           null,
           1,
-          1,
-          null,
-          null,
-          1,
-          1,
+          7,
           null,
           null,
           1,
@@ -124,7 +292,37 @@
           null,
           1,
           0,
+          0,
           null,
+          null
+        ]
+      },
+      "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/serializers/account_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/serializers/category_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/serializers/ledger_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/serializers/transaction_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
           null
         ]
       },
@@ -143,111 +341,6 @@
           0,
           0,
           0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/controllers/accounts_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/controllers/categories_controller.rb": {
-        "lines": [
-          0,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           0
         ],
         "branches": {
@@ -314,71 +407,8 @@
         "branches": {
         }
       },
-      "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/controllers/ledgers_controller.rb": {
-        "lines": [
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
       "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/controllers/subcategories_controller.rb": {
         "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
-      },
-      "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/controllers/transactions_controller.rb": {
-        "lines": [
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
-          null,
-          0,
-          null,
-          0,
-          0,
-          0,
-          null,
-          0,
-          0,
-          0,
-          0,
-          0,
-          0,
           0,
           0
         ],
@@ -418,8 +448,18 @@
         ],
         "branches": {
         }
+      },
+      "/Users/sebas.rossi/Desktop/Projects/xpenses-api/app/serializers/subcategory_serializer.rb": {
+        "lines": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
       }
     },
-    "timestamp": 1645191090
+    "timestamp": 1645211753
   }
 }

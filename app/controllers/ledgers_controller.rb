@@ -6,7 +6,7 @@ class LedgersController < ApplicationController
 
   def create
     @ledger = Ledger.new(ledger_params)
-    return unless @ledger.save!
+    render json: @ledger if @ledger.save
   end
 
   private
