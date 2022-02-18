@@ -81,6 +81,9 @@ GEM
     erubis (2.7.0)
     factory_bot (6.2.0)
       activesupport (>= 5.0.0)
+    factory_bot_rails (6.2.0)
+      factory_bot (~> 6.2.0)
+      railties (>= 5.0.0)
     ffi (1.15.4)
     flay (2.12.1)
       erubis (~> 2.7.0)
@@ -252,7 +255,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap (>= 1.4.2)
   byebug
-  factory_bot
+  factory_bot_rails
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   pry-byebug
