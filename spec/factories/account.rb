@@ -1,6 +1,6 @@
 FactoryBot.define do
     factory :account, class: 'Account' do
-        name { 'test-account' }
+        sequence(:name) { |x| "tacc#{x}" }
         ledger { create(:ledger) }
     end
 end
