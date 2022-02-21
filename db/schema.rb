@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 2021_12_04_191916) do
   end
 
   create_table "ledgers", force: :cascade do |t|
+    t.string "uuid"
     t.string "name"
     t.string "description"
     t.datetime "created_at", precision: 6, null: false

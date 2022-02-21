@@ -3,7 +3,8 @@ class Ledger < ApplicationRecord
   has_many :categories
   has_many :subcategories, through: :categories
   has_many :transactions
-  validates :name, :description, presence: true
+  validates :uuid, :name, :description, presence: true
+  validates :uuid, uniqueness: true
   validates :name, :description, length: { in: 4..20 }
 
   def ledger_cleared_deposit
