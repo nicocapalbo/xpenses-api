@@ -21,8 +21,8 @@ class AccountsController < ApplicationController
   private
 
   def set_ledger
-      @ledger = Ledger.find_by(id: params[:ledger_id])
-      render_fail('Ledger not found / Ledger must exist', :bad_request) unless @ledger
+    @ledger = Ledger.find_by(id: params[:ledger_id])
+    render_fail('Ledger not found / Ledger must exist', :bad_request) unless @ledger
   end
 
   def account_params
