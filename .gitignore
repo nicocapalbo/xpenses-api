@@ -28,3 +28,6 @@
 
 #Ignore env files
 /.env
+/config/credentials/production.key
+
+/config/credentials/development.key

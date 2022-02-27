@@ -105,9 +105,9 @@ GEM
       activesupport (>= 5.0)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
-    jwt (2.3.0)
     ice_nine (0.11.2)
     jsonapi-renderer (0.2.2)
+    jwt (2.3.0)
     kwalify (0.7.2)
     launchy (2.5.0)
       addressable (~> 2.7)
@@ -267,8 +267,8 @@ DEPENDENCIES
   active_model_serializers
   bootsnap (>= 1.4.2)
   byebug
-  jwt
   factory_bot_rails
+  jwt
   listen (~> 3.2)
   pg (>= 0.18, < 2.0)
   pry-byebug
