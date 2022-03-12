@@ -18,7 +18,7 @@ Ledger.destroy_all
 # User.create!(email: 'nico@mail.com', password: 123456, password_confirmation: 123456)
 
 p '#3 - Creating new ledgers.....'
-Ledger.create!(name: 'Gastos', description: 'nice description')
+Ledger.create!(uuid: "google-oauth2|107132543669876578277", name: 'Gastos', description: 'nice description')
 
 p '#4 - Creating new accounts.....'
 Account.create!(name: 'BBVA', ledger: Ledger.first)
