@@ -40,6 +40,7 @@ group :development, :test do
   gem 'rubycritic'
   gem 'simplecov', require: false
   gem 'shoulda-matchers', '~> 5.0'
+  gem 'rack-cors'
 end
 
 group :development do
